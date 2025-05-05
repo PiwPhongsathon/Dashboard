@@ -55,7 +55,7 @@ export default function Home() {
         <CardHeader>
           <CardTitle>Bar - chart</CardTitle>
           <CardDescription>January 22- June 2024</CardDescription>
-          <CardContent className={"p-0"}>
+          <CardContent className={"px-0 pt-6"}>
             <AppBarChart />
           </CardContent>
         </CardHeader>

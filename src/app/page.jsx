@@ -20,8 +20,8 @@ export default function Home() {
           <CardTitle>Total Revenue</CardTitle>
         </CardHeader>
         <CardContent>
-          <h3 className="text-2xl font-bold">$450,000</h3>
-          <h5 className="text-xs text-muted-foreground">+20.1% from last month</h5>
+          <h3 className="text-2xl font-bold">$120,000</h3>
+          <h5 className="text-xs text-muted-foreground">+6.1% from last month</h5>
         </CardContent>
       </Card>
       <Card className={"gap-1"}>

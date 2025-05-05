@@ -30,8 +30,8 @@ const items = [
         icon: Home,
     },
     {
-        title: "Inbox",
-        url: "#",
+        title: "Product",
+        url: "/product",
         icon: Inbox,
     },
     {

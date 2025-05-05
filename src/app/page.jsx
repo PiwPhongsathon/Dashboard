@@ -26,7 +26,7 @@ export default function Home() {
       </Card>
       <Card className={"gap-1"}>
         <CardHeader>
-          <CardTitle>Total Revenue</CardTitle>
+          <CardTitle>ค่าใช้จ่ายทั้งหมด</CardTitle>
         </CardHeader>
         <CardContent>
           <h3 className="text-2xl font-bold">$450,000</h3>

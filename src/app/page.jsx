@@ -47,7 +47,7 @@ export default function Home() {
           <CardTitle>Total Revenue</CardTitle>
         </CardHeader>
         <CardContent>
-          <h3 className="text-2xl font-bold">$450,000</h3>
+          <h3 className="text-2xl font-bold">$150,000</h3>
           <h5 className="text-xs text-muted-foreground">+1234</h5>
         </CardContent>
       </Card>

@@ -54,7 +54,7 @@ export default function Home() {
       <Card className={"xl:col-span-2"}>
         <CardHeader>
           <CardTitle>Bar - chart</CardTitle>
-          <CardDescription>January - June 2024</CardDescription>
+          <CardDescription>January 22- June 2024</CardDescription>
           <CardContent className={"p-0"}>
             <AppBarChart />
           </CardContent>

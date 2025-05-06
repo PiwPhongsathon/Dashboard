@@ -1,18 +1,25 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { AppBarChart } from "@/components/AppBarChart";
 
 export default function DashboardPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
+    const token = localStorage.getItem("accessToken");
 
     if (!token) {
-      router.push('/login');
+      router.push("/login");
     }
   }, []);
 
-  return <h1>Dashboard</h1>;
+  return (
+    <div className="grid grid-cols-4">
+      <div className="grid col-span-4">
+        <AppBarChart/>
+      </div>
+    </div>
+  );
 }

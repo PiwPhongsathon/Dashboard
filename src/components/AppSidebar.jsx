@@ -58,7 +58,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
-                            <Link href="/" >
+                            <Link href="#" >
                             <Box /> 
                             <span className="text-lg font-semibold">Admin Panel</span>
                             </Link>

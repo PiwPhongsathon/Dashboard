@@ -59,6 +59,7 @@ const page = () => {
     <Table>
       <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
+      <h1 className="text-2xl">Product</h1>
         <TableRow>
           <TableHead className="w-[100px]">Invoice</TableHead>
           <TableHead>Status</TableHead>

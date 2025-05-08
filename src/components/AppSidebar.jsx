@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Calendar, ChevronDown, Home, Inbox, Search, Settings } from "lucide-react"
 import {
     DropdownMenu,
@@ -21,6 +23,7 @@ import {
     SidebarSeparator,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 // Menu items.
 const items = [
@@ -35,12 +38,12 @@ const items = [
         icon: Inbox,
     },
     {
-        title: "Calendar",
-        url: "#",
+        title: "Weather",
+        url: "/weather",
         icon: Calendar,
     },
     {
-        title: "Search",
+        title: "Calendar",
         url: "#",
         icon: Search,
     },
@@ -52,6 +55,7 @@ const items = [
 ]
 
 export function AppSidebar() {
+    const pathname = usePathname();
     return (
         <Sidebar collapsible="icon">
             <SidebarHeader>
@@ -72,16 +76,26 @@ export function AppSidebar() {
                     <SidebarGroupLabel>Applications</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {items.map((item) => (
-                                <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild>
-                                        <a href={item.url}>
-                                            <item.icon />
-                                            <span>{item.title}</span>
-                                        </a>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                            ))}
+                        {items.map((item) => {
+                                const isActive = pathname === item.url;
+                                return (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton asChild>
+                                            <Link
+                                                href={item.url}
+                                                className={`flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors ${
+                                                    isActive
+                                                        ? "bg-muted text-primary font-semibold"
+                                                        : "text-muted-foreground hover:bg-muted"
+                                                }`}
+                                            >
+                                                <item.icon className="w-4 h-4" />
+                                                <span>{item.title}</span>
+                                            </Link>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                );
+                            })}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>

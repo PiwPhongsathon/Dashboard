@@ -16,25 +16,24 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch('https://www.melivecode.com/api/login', {
+      const res = await fetch('http://localhost:5016/api/Auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password, expiresIn: 60000 })
+        body: JSON.stringify({ username, password })
       });
 
       const data = await res.json();
 
-      if (data.status === 'ok') {
-        localStorage.setItem('accessToken', data.accessToken);
-        localStorage.setItem('user', JSON.stringify(data.user));
+      if (res.ok && data.token) {
+        localStorage.setItem('accessToken', data.token);
         router.push('/dashboard');
       } else {
-        setErrorMsg(data.message);
+        setErrorMsg('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
       }
     } catch (err) {
-      setErrorMsg('เกิดข้อผิดพลาดในการเชื่อมต่อ');
+      setErrorMsg('เชื่อมต่อ API ไม่ได้');
     }
   };
 
